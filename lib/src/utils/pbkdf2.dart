@@ -21,7 +21,7 @@ class PBKDF2 {
   }) : _derivator =
             new PBKDF2KeyDerivator(new HMac(new SHA512Digest(), blockLength));
 
-  Uint8List process(String mnemonic, {passphrase: ""}) {
+  Uint8List process(String mnemonic, {passphrase = ""}) {
     final salt = Uint8List.fromList(utf8.encode(saltPrefix + passphrase));
     _derivator.reset();
     _derivator
