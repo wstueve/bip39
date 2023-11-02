@@ -1,7 +1,7 @@
 /// Support for doing something awesome.
 ///
 /// More dartdocs go here.
-library bip39;
+library bip39_dart;
 
 export 'src/bip39_base.dart';
 

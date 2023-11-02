@@ -1,4 +1,4 @@
-import 'package:bip39_dart/bip39.dart' as bip39;
+import 'package:bip39_dart/bip39_dart.dart' as bip39;
 
 main() async {
   String randomMnemonic = bip39.generateMnemonic();

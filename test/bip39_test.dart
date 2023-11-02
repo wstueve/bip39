@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
 
-import 'package:bip39_dart/bip39.dart' as bip39;
+import 'package:bip39_dart/bip39_dart.dart' as bip39;
 import 'package:hex/hex.dart';
 import 'package:test/test.dart';
 
