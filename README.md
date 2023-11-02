@@ -16,44 +16,44 @@ However, there should be other checks in place, such as checking to make sure th
 ## Examples
 ``` dart
 // Generate a random mnemonic (uses crypto.randomBytes under the hood), defaults to 128-bits of entropy
-var mnemonic = bip39.generateMnemonic()
+var mnemonic = bip39_dart.generateMnemonic()
 // => 'seed sock milk update focus rotate barely fade car face mechanic mercy'
 
-bip39.mnemonicToSeedHex('basket actual')
+bip39_dart.mnemonicToSeedHex('basket actual')
 // => String '5cf2d4a8b0355e90295bdfc565a022a409af063d5365bb57bf74d9528f494bfa4400f53d8349b80fdae44082d7f9541e1dba2b003bcfec9d0d53781ca676651f'
 
-bip39.mnemonicToSeed('basket actual')
+bip39_dart.mnemonicToSeed('basket actual')
 // => Uint8List [92, 242, 212, 168, 176, 53, 94, 144, 41, 91, 223, 197, 101, 160, 34, 164, 9, 175, 6, 61, 83, 101, 187, 87, 191, 116, 217, 82, 143, 73, 75, 250, 68, 0, 245, 61, 131, 73, 184, 15, 218, 228, 64, 130, 215, 249, 84, 30, 29, 186, 43, 0, 59, 207, 236, 157, 13, 83, 120, 28, 166, 118, 101, 31]
 
-bip39.validateMnemonic(mnemonic)
+bip39_dart.validateMnemonic(mnemonic)
 // => true
 
-bip39.validateMnemonic('basket actual')
+bip39_dart.validateMnemonic('basket actual')
 // => false
 ```
 
 
 ``` dart
-import 'package:bip39/bip39.dart' as bip39;
+import 'package:bip39_dart/bip39_dart.dart' as bip39;
 
 main() {
     // Only support BIP39 English word list
     // uses HEX strings for entropy
-    String randomMnemonic = await bip39.generateMnemonic();
+    String randomMnemonic = await bip39_dart.generateMnemonic();
 
-    String seed = bip39.mnemonicToSeedHex("update elbow source spin squeeze horror world become oak assist bomb nuclear");
+    String seed = bip39_dart.mnemonicToSeedHex("update elbow source spin squeeze horror world become oak assist bomb nuclear");
     // => '77e6a9b1236d6b53eaa64e2727b5808a55ce09eb899e1938ed55ef5d4f8153170a2c8f4674eb94ce58be7b75922e48e6e56582d806253bd3d72f4b3d896738a4'
     
-    String mnemonic = await bip39.entropyToMnemonic('00000000000000000000000000000000');
+    String mnemonic = await bip39_dart.entropyToMnemonic('00000000000000000000000000000000');
     // => 'abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about'
     
-    bool isValid = await bip39.validateMnemonic(mnemonic);
+    bool isValid = await bip39_dart.validateMnemonic(mnemonic);
     // => true
     
-    isValid = await bip39.validateMnemonic('basket actual');
+    isValid = await bip39_dart.validateMnemonic('basket actual');
     // => false
     
-    String entropy = bip39.mnemonicToEntropy(mnemonic)
+    String entropy = bip39_dart.mnemonicToEntropy(mnemonic)
     // => String '00000000000000000000000000000000'
 }
 ```
