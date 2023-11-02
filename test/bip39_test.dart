@@ -6,6 +6,10 @@ import 'package:bip39/bip39.dart' as bip39;
 import 'package:hex/hex.dart';
 import 'package:test/test.dart';
 
+import '../lib/src/wordlists/english.dart';
+
+import '../lib/src/wordlists/english.dart';
+
 void main() {
   Map<String, dynamic> vectors =
       json.decode(File('./test/vectors.json').readAsStringSync(encoding: utf8));
@@ -81,6 +85,22 @@ void main() {
             expect(size, 160 / 8);
             return Uint8List(size);
           });
+    });
+
+    test('generates a valid mnemonic', () {
+      final mnemonic = bip39.generateMnemonic();
+      expect(bip39.validateMnemonic(mnemonic), isTrue);
+    });
+
+    test('generates a set of words from wordlist', () {
+      final words = (bip39.generateMnemonic()).split(' ');
+      expect(words.length, equals(12),
+          reason: 'generates 12 words by default');
+      expect(words.toSet().length, equals(12),
+          reason: 'generates a unique set of words');
+      expect(words.every((word) => WORDLIST.contains(word)),
+          isTrue,
+          reason: 'generates words from the wordlist');
     });
   });
 }

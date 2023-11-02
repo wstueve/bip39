@@ -7,7 +7,7 @@ import 'package:hex/hex.dart';
 import 'utils/pbkdf2.dart';
 import 'wordlists/english.dart';
 
-const int _SIZE_BYTE = 255;
+const int _MAX_BYTE = 255;
 const _INVALID_MNEMONIC = 'Invalid mnemonic';
 const _INVALID_ENTROPY = 'Invalid entropy';
 const _INVALID_CHECKSUM = 'Invalid mnemonic checksum';
@@ -22,14 +22,6 @@ String _bytesToBinary(Uint8List bytes) {
   return bytes.map((byte) => byte.toRadixString(2).padLeft(8, '0')).join('');
 }
 
-//Uint8List _createUint8ListFromString( String s ) {
-//  var ret = new Uint8List(s.length);
-//  for( var i=0 ; i<s.length ; i++ ) {
-//    ret[i] = s.codeUnitAt(i);
-//  }
-//  return ret;
-//}
-
 String _deriveChecksumBits(Uint8List entropy) {
   final ENT = entropy.length * 8;
   final CS = ENT ~/ 32;
@@ -41,7 +33,7 @@ Uint8List _randomBytes(int size) {
   final rng = Random.secure();
   final bytes = Uint8List(size);
   for (var i = 0; i < size; i++) {
-    bytes[i] = rng.nextInt(_SIZE_BYTE);
+    bytes[i] = rng.nextInt(_MAX_BYTE + 1);
   }
   return bytes;
 }
