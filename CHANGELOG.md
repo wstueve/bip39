@@ -13,3 +13,7 @@
 ## 1.0.6
 
 - Resolved nullsafety code issues
+
+## 1.0.6
+
+- Resolved issue with mneumonic generation bias away from some keys
