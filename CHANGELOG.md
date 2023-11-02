@@ -14,6 +14,8 @@
 
 - Resolved nullsafety code issues
 
-## 1.0.6
+## 1.1.0
 
 - Resolved issue with mneumonic generation bias away from some keys
+- Added tests
+- Upgraded dependencies
