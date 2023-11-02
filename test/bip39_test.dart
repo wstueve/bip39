@@ -8,7 +8,6 @@ import 'package:test/test.dart';
 
 import '../lib/src/wordlists/english.dart';
 
-import '../lib/src/wordlists/english.dart';
 
 void main() {
   Map<String, dynamic> vectors =
