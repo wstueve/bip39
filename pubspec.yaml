@@ -1,6 +1,6 @@
-name: bip39
-description: Dart implementation of Bitcoin BIP39 Mnemonic code for generating deterministic keys
-version: 1.1.0
+name: bip39_dart
+description: Dart implementation of Bitcoin BIP39 Mnemonic code for generating deterministic keys.
+version: 1.0.0
 homepage: https://github.com/wstueve/bip39
 
 environment:
@@ -9,6 +9,6 @@ environment:
 dependencies:
   pointycastle: ^3.7.3
   hex: ^0.2.0
-  crypto: ^3.0.0
+  crypto: ^3.0.3
 dev_dependencies:
   test: ^1.0.0

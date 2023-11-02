@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:bip39/bip39.dart' as bip39;
+import 'package:bip39_dart/bip39.dart' as bip39;
 
 import '../lib/src/wordlists/english.dart';
 
